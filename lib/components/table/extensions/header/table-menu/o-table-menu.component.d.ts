@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, Injector, OnDestroy, OnInit, EventEmitter } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, Injector, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog, MatMenu } from '@angular/material';
 import { Observable } from 'rxjs';
 import { OTableMenu } from '../../../../../interfaces/o-table-menu.interface';
@@ -21,7 +21,6 @@ export declare class OTableMenuComponent implements OTableMenu, OnInit, AfterVie
     showConfigurationOption: boolean;
     showFilterOption: boolean;
     columnsVisibilityButton: boolean;
-    onVisibleFilterOptionChange: EventEmitter<any>;
     protected dialogService: DialogService;
     protected translateService: OTranslateService;
     protected snackBarService: SnackBarService;
@@ -34,14 +33,10 @@ export declare class OTableMenuComponent implements OTableMenu, OnInit, AfterVie
     filterMenu: MatMenu;
     configurationMenu: MatMenu;
     columnFilterOption: OTableOptionComponent;
-    private showColumnsFilterOptionSubject;
-    showColumnsFilterOption: Observable<boolean>;
     protected permissions: OTableMenuPermissions;
     protected mutationObservers: MutationObserver[];
-    private subscription;
     constructor(injector: Injector, dialog: MatDialog, cd: ChangeDetectorRef, table: OTableComponent);
     ngOnInit(): void;
-    readonly isColumnFilterOptionActive: boolean;
     ngAfterViewInit(): void;
     protected disableOTableOptionComponent(comp: OTableOptionComponent): void;
     protected disableButton(buttonEL: ElementRef): void;
@@ -50,6 +45,8 @@ export declare class OTableMenuComponent implements OTableMenu, OnInit, AfterVie
     protected setPermissionsToOTableOption(perm: OPermissions, option: OTableOptionComponent): void;
     getPermissionByAttr(attr: string): OPermissions;
     readonly isSelectAllOptionActive: boolean;
+    readonly showColumnsFilterOption: boolean;
+    readonly enabledColumnsFilterOption: boolean;
     readonly showSelectAllCheckbox: boolean;
     readonly rowHeightObservable: Observable<string>;
     readonly enabledSelectAllCheckbox: boolean;

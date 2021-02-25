@@ -7,7 +7,6 @@ import { DialogService } from '../services/dialog.service';
 import { LocalStorageService } from '../services/local-storage.service';
 import { OQueryDataArgs } from '../types/query-data-args.type';
 import { OFormComponent } from './form/o-form.component';
-import { OExpandableContainerComponent } from './expandable-container/o-expandable-container.component';
 export declare const DEFAULT_INPUTS_O_SERVICE_BASE_COMPONENT: string[];
 export declare class OServiceBaseComponent implements ILocalStorageComponent, OnChanges {
     protected injector: Injector;
@@ -51,7 +50,6 @@ export declare class OServiceBaseComponent implements ILocalStorageComponent, On
     protected loadingSubject: BehaviorSubject<boolean>;
     loading: Observable<boolean>;
     protected form: OFormComponent;
-    expandableContainer: OExpandableContainerComponent;
     protected alreadyStored: boolean;
     protected queryOnEventSubscription: Subscription;
     cd: ChangeDetectorRef;
@@ -76,7 +74,6 @@ export declare class OServiceBaseComponent implements ILocalStorageComponent, On
     getDataArray(): any[];
     setDataArray(data: any): void;
     setFormComponent(form: OFormComponent): void;
-    getParentKeysFromContext(parentKeys: object, context: any): {};
     queryData(filter?: any, ovrrArgs?: OQueryDataArgs): void;
     reloadData(): void;
     reloadPaginatedDataFromStart(): void;
@@ -86,7 +83,6 @@ export declare class OServiceBaseComponent implements ILocalStorageComponent, On
     getQueryArguments(filter: object, ovrrArgs?: OQueryDataArgs): Array<any>;
     updatePaginationInfo(queryRes: ServiceResponse): void;
     getTotalRecordsNumber(): number;
-    getContextComponent(): OFormComponent | OExpandableContainerComponent;
     getComponentFilter(existingFilter?: any): any;
     getSqlTypes(): any;
     state: any;

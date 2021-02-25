@@ -13,7 +13,6 @@ export declare class OCheckboxComponent extends OFormDataComponent {
     constructor(form: OFormComponent, elRef: ElementRef, injector: Injector);
     initialize(): void;
     ensureOFormValue(value: any): void;
-    getValue(): any;
     onClickBlocker(evt: Event): void;
     parseValueByType(value: any): any;
     protected parseStringInputs(): void;

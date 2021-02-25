@@ -43,7 +43,7 @@ export declare class OColumn {
     getMinWidth(): string;
     getMinWidthValue(): number;
     getMaxWidthValue(): number;
-    getRenderWidth(horizontalScrolled: boolean, clientWidth: number): string;
+    getRenderWidth(horizontalScrolled?: boolean): string;
     width: string;
     getWidthToStore(): any;
     setWidth(val: number): void;

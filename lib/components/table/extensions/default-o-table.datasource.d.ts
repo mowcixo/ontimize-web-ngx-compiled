@@ -67,7 +67,6 @@ export declare class DefaultOTableDataSource extends DataSource<any> implements 
     getColumnValueFilters(): OColumnValueFilter[];
     getColumnValueFilterByAttr(attr: string): OColumnValueFilter;
     clearColumnFilters(trigger?: boolean): void;
-    clearColumnFilter(attr: string, trigger?: boolean): void;
     addColumnFilter(filter: OColumnValueFilter): void;
     getColumnValueFilterData(data: any[]): any[];
     getAggregateData(column: OColumn): string | {}[];

@@ -74,7 +74,6 @@ export declare class Codes {
     static UNDO_LAST_CHANGE_ACTION: string;
     static DEFAULT_COLUMN_MIN_WIDTH: number;
     static NAME_COLUMN_SELECT: string;
-    static NAME_COLUMN_EXPANDABLE: string;
     static SUFFIX_COLUMN_INSERTABLE: string;
     static LIMIT_SCROLLVIRTUAL: number;
     static TWENTY_FOUR_HOUR_FORMAT: number;

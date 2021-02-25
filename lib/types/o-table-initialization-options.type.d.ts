@@ -6,5 +6,4 @@ export declare type OTableInitializationOptions = {
     keys?: string;
     sortColumns?: string;
     parentKeys?: string;
-    filterColumns?: string;
 };

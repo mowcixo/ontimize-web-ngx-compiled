@@ -1,5 +1,4 @@
 import { OnInit } from '@angular/core';
-import { ThemePalette } from '@angular/material';
 export declare const DEFAULT_INPUTS_O_BUTTON: string[];
 export declare class OButtonComponent implements OnInit {
     protected static DEFAULT_TYPE: string;
@@ -10,8 +9,6 @@ export declare class OButtonComponent implements OnInit {
     svgIcon: string;
     iconPosition: string;
     image: string;
-    enabled: boolean;
-    color: ThemePalette;
     constructor();
     ngOnInit(): void;
     readonly needsIconButtonClass: boolean;

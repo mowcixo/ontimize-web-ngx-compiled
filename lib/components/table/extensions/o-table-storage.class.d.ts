@@ -14,10 +14,8 @@ export declare class OTableStorage {
     };
     getTablePropertiesToStore(properties: string[]): {};
     getTablePropertyToStore(property: string): {};
-    getFilterColumnsState(): any;
     reset(): void;
     protected getSortState(): {};
-    protected getFilterColumnActiveByDefaultState(): {};
     protected getColumnFiltersState(): {};
     protected getColumnsDisplayState(): {};
     protected getColumnsQuickFilterState(): any;
@@ -31,7 +29,6 @@ export declare class OTableStorage {
     deleteStoredFilter(filterName: string): void;
     storeFilter(filterArgs: OTableFiltersStatus): void;
     getStoredColumnsFilters(arg?: any): any;
-    getStoredFiltersColumns(arg?: any): any;
     getStoredConfigurations(): any;
     getStoredConfiguration(configurationName: string): any;
     storeConfiguration(configurationAgs: OTableConfiguration, tableProperties: any[]): void;

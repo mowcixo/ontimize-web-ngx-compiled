@@ -1,20 +1,15 @@
-import { AfterViewInit, ElementRef, EventEmitter } from '@angular/core';
+import { AfterViewInit, ElementRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatCheckboxChange, MatDialogRef, MatSelectionList, MatSlideToggleChange } from '@angular/material';
 import { Observable } from 'rxjs';
 import { OColumnValueFilter } from '../../../../../types/o-column-value-filter.type';
-import { TableFilterByColumnData, TableFilterByColumnDialogResult } from '../../../../../types/o-table-filter-by-column-data.type';
+import { TableFilterByColumnData } from '../../../../../types/o-table-filter-by-column-data.type';
 import { OColumn } from '../../../column/o-column.class';
-import { OFilterColumn } from '../../header/table-columns-filter/columns/o-table-columns-filter-column.component';
 export declare class OTableFilterByColumnDataDialogComponent implements AfterViewInit {
     dialogRef: MatDialogRef<OTableFilterByColumnDataDialogComponent>;
-    acceptAction: TableFilterByColumnDialogResult;
-    cancelAction: TableFilterByColumnDialogResult;
-    clearAction: TableFilterByColumnDialogResult;
     column: OColumn;
     preloadValues: boolean;
     mode: string;
-    onSortFilterValuesChange: EventEmitter<OFilterColumn>;
     private isCustomFilterSubject;
     isCustomFilter: Observable<boolean>;
     private isDefaultFilterSubject;
@@ -28,7 +23,6 @@ export declare class OTableFilterByColumnDataDialogComponent implements AfterVie
     protected _listData: Observable<Array<TableFilterByColumnData>>;
     filter: ElementRef;
     filterValueList: MatSelectionList;
-    activeSortDirection: 'asc' | 'desc' | '';
     constructor(dialogRef: MatDialogRef<OTableFilterByColumnDataDialogComponent>, data: any);
     ngAfterViewInit(): void;
     listData: Observable<Array<TableFilterByColumnData>>;
@@ -41,18 +35,12 @@ export declare class OTableFilterByColumnDataDialogComponent implements AfterVie
     onSelectAllChange(event: MatCheckboxChange): void;
     getDistinctValues(data: Array<any>, filter: OColumnValueFilter): void;
     getColumnValuesFilter(): OColumnValueFilter;
-    clearValues(): void;
-    onClickSortValues(): void;
-    sortData(): void;
-    sortFunction(a: any, b: any): number;
     onSlideChange(e: MatSlideToggleChange): void;
     isTextType(): boolean;
     isNumericType(): boolean;
     isDateType(): boolean;
     getRowValue(i: number): any;
     getFixedDimensionClass(): boolean;
-    getSortByAlphaIcon(): string;
-    getFilterColumn(): OFilterColumn;
     protected getTypedValue(control: FormControl): any;
     protected getColumnDataUsingRenderer(): any[];
 }

@@ -20524,9 +20524,9 @@ $mat-form-field-dedupe: 0;
         background-color: inherit;
       }
 
-       > .o-container-header,
+       > .mat-expansion-panel-header,
        > .o-container-title,
-      > .mat-expansion-panel-header {
+      > .o-container-header {
         border-color: mat-color($foreground, divider);
         color: mat-color($foreground, text);
 
@@ -20544,15 +20544,6 @@ $mat-form-field-dedupe: 0;
             weight: mat-font-weight($typography, input);
           }
         }
-      }
-    }
-  }
-
-  .o-column-collapsible,
-  .o-row-collapsible {
-    > .o-container {
-      .o-container-title.mat-expansion-panel-header-title {
-        border: none;
       }
     }
   }
@@ -46071,10 +46062,6 @@ $mat-form-field-dedupe: 0;
   $warn: map-get($theme, warn);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
-  $table-background: mat-color($background, 'card');
-  $text-color: mat-color($foreground, secondary-text);
-  $text-opacity: opacity($text-color);
-  $is-dark-theme: map-get($theme, is-dark);
 
   .o-table {
     .o-table-column-resizer span {
@@ -46091,21 +46078,14 @@ $mat-form-field-dedupe: 0;
 
     .mat-table {
       .mat-header-row {
+
         .mat-header-cell {
           color: mat-color($foreground, text);
 
-          .column-filter-icon {
-            color: mat-color($background, disabled-button);
-          }
-
-          .column-filter-icon-active,
           .column-filter-icon.active {
-            color: mix($table-background, rgba($text-color, 1), (1 - $text-opacity) * 100%);
+            color: mat-color($accent);
           }
 
-          .o-table-header-indicator-numbered {
-            color: mat-color($foreground, secondary-text);
-          }
         }
       }
 
@@ -46116,7 +46096,7 @@ $mat-form-field-dedupe: 0;
         }
 
         &.selected {
-          background: mat-color($primary, 50,if($is-dark-theme, 0.5, 1));
+          background: mat-color($primary, 50);
         }
 
         .mat-cell {

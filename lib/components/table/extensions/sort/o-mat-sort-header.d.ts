@@ -11,6 +11,4 @@ export declare class OMatSortHeader extends MatSortHeader {
     _isSorted(): boolean;
     _updateArrowDirection(): void;
     refresh(): void;
-    getSortIndicatorNumbered(): string;
-    getSortIndicatorNumberedClass(): string;
 }

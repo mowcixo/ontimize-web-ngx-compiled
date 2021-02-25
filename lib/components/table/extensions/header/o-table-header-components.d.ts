@@ -6,6 +6,4 @@ import { OTableInsertableRowComponent } from './table-insertable-row/o-table-ins
 import { OTableMenuComponent } from './table-menu/o-table-menu.component';
 import { OTableOptionComponent } from './table-option/o-table-option.component';
 import { OTableQuickfilterComponent } from './table-quickfilter/o-table-quickfilter.component';
-import { OTableColumnsFilterColumnComponent } from './table-columns-filter/columns/o-table-columns-filter-column.component';
-import { OTableHeaderColumnFilterIconComponent } from './table-header-column-filter-icon/o-table-header-column-filter-icon.component';
-export declare const O_TABLE_HEADER_COMPONENTS: (typeof OTableOptionComponent | typeof OTableColumnsFilterColumnComponent | typeof OTableColumnsFilterComponent | typeof OTableInsertableRowComponent | typeof OTableButtonComponent | typeof OTableButtonsComponent | typeof OTableColumnResizerComponent | typeof OTableMenuComponent | typeof OTableQuickfilterComponent | typeof OTableHeaderColumnFilterIconComponent)[];
+export declare const O_TABLE_HEADER_COMPONENTS: (typeof OTableOptionComponent | typeof OTableColumnsFilterComponent | typeof OTableInsertableRowComponent | typeof OTableButtonComponent | typeof OTableButtonsComponent | typeof OTableColumnResizerComponent | typeof OTableMenuComponent | typeof OTableQuickfilterComponent)[];

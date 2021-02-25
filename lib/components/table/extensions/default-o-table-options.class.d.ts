@@ -6,10 +6,8 @@ export declare class DefaultOTableOptions implements OTableOptions {
     filterCaseSensitive: boolean;
     protected _visibleColumns: Array<any>;
     protected _selectColumn: OColumn;
-    protected _expandableColumn: OColumn;
     constructor();
     visibleColumns: Array<any>;
     readonly columnsInsertables: Array<string>;
     selectColumn: OColumn;
-    expandableColumn: OColumn;
 }
