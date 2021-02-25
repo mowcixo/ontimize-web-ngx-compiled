@@ -1,0 +1,38 @@
+import { Subscription } from 'rxjs';
+import { OFileUploader } from './o-file-uploader.class';
+export declare class OFileItem {
+    index: number;
+    isReady: boolean;
+    isUploading: boolean;
+    isUploaded: boolean;
+    isSuccess: boolean;
+    isCancel: boolean;
+    isError: boolean;
+    progress: number;
+    _uploadSuscription: Subscription;
+    protected uploader: OFileUploader;
+    protected _file: File;
+    constructor(file: File, uploader: OFileUploader);
+    upload(): void;
+    cancel(): void;
+    remove(): void;
+    prepareToUpload(): void;
+    readonly file: File;
+    readonly name: string;
+    readonly size: number;
+    readonly type: string;
+    readonly lastModifiedDate: any;
+    _onBeforeUpload(notify?: boolean): void;
+    _onProgress(progress: number): void;
+    _onSuccess(data: any, notify?: boolean): void;
+    _onError(error: any, notify?: boolean): void;
+    _onCancel(notify?: boolean): void;
+    _onComplete(notify?: boolean): void;
+    onBeforeUpload(): any;
+    onProgress(progress: number): any;
+    onSuccess(data: any): any;
+    onError(error: any): any;
+    onCancel(): any;
+    onComplete(): any;
+    readonly pendingUpload: boolean;
+}

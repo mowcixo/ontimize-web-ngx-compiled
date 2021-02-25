@@ -1,0 +1,33 @@
+import { Injector, OnDestroy, OnInit } from '@angular/core';
+import { BehaviorSubject, Subscription } from 'rxjs';
+import { OTableButtons } from '../../../../../interfaces/o-table-buttons.interface';
+import { OPermissions } from '../../../../../types/o-permissions.type';
+import { OTableComponent } from '../../../o-table.component';
+import { OTableButtonComponent } from '../table-button/o-table-button.component';
+export declare const DEFAULT_INPUTS_O_TABLE_BUTTONS: string[];
+export declare const DEFAULT_OUTPUTS_O_TABLE_BUTTONS: any[];
+export declare class OTableButtonsComponent implements OTableButtons, OnInit, OnDestroy {
+    protected injector: Injector;
+    protected table: OTableComponent;
+    insertButton: boolean;
+    refreshButton: boolean;
+    deleteButton: boolean;
+    enabledInsertButton: BehaviorSubject<boolean>;
+    enabledRefreshButton: BehaviorSubject<boolean>;
+    enabledDeleteButton: BehaviorSubject<boolean>;
+    protected permissions: OPermissions[];
+    protected mutationObservers: MutationObserver[];
+    protected subscription: Subscription;
+    constructor(injector: Injector, table: OTableComponent);
+    ngOnInit(): void;
+    ngOnDestroy(): void;
+    add(): void;
+    reloadData(): void;
+    remove(): void;
+    getPermissionByAttr(attr: string): OPermissions;
+    registerButtons(oTableButtons: OTableButtonComponent[]): void;
+    readonly showInsertOButton: boolean;
+    readonly showRefreshOButton: boolean;
+    readonly showDeleteOButton: boolean;
+    protected setPermissionsToOTableButton(perm: OPermissions, button: OTableButtonComponent): void;
+}

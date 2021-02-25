@@ -1,0 +1,16 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { OSharedModule } from '../../../shared/shared.module';
+import { ODateInputModule } from '../date-input/o-date-input.module';
+import { OHourInputModule } from '../hour-input/o-hour-input.module';
+import { OTimeInputComponent } from './o-time-input.component';
+export class OTimeInputModule {
+}
+OTimeInputModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [OTimeInputComponent],
+                imports: [CommonModule, ODateInputModule, OHourInputModule, OSharedModule],
+                exports: [OTimeInputComponent]
+            },] }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiby10aW1lLWlucHV0Lm1vZHVsZS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL29udGltaXplLXdlYi1uZ3gvIiwic291cmNlcyI6WyJsaWIvY29tcG9uZW50cy9pbnB1dC90aW1lLWlucHV0L28tdGltZS1pbnB1dC5tb2R1bGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFlBQVksRUFBRSxNQUFNLGlCQUFpQixDQUFDO0FBQy9DLE9BQU8sRUFBRSxRQUFRLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFFekMsT0FBTyxFQUFFLGFBQWEsRUFBRSxNQUFNLCtCQUErQixDQUFDO0FBQzlELE9BQU8sRUFBRSxnQkFBZ0IsRUFBRSxNQUFNLG1DQUFtQyxDQUFDO0FBQ3JFLE9BQU8sRUFBRSxnQkFBZ0IsRUFBRSxNQUFNLG1DQUFtQyxDQUFDO0FBQ3JFLE9BQU8sRUFBRSxtQkFBbUIsRUFBRSxNQUFNLDBCQUEwQixDQUFDO0FBTy9ELE1BQU0sT0FBTyxnQkFBZ0I7OztZQUw1QixRQUFRLFNBQUM7Z0JBQ1IsWUFBWSxFQUFFLENBQUMsbUJBQW1CLENBQUM7Z0JBQ25DLE9BQU8sRUFBRSxDQUFDLFlBQVksRUFBRSxnQkFBZ0IsRUFBRSxnQkFBZ0IsRUFBRSxhQUFhLENBQUM7Z0JBQzFFLE9BQU8sRUFBRSxDQUFDLG1CQUFtQixDQUFDO2FBQy9CIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tbW9uTW9kdWxlIH0gZnJvbSAnQGFuZ3VsYXIvY29tbW9uJztcbmltcG9ydCB7IE5nTW9kdWxlIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5cbmltcG9ydCB7IE9TaGFyZWRNb2R1bGUgfSBmcm9tICcuLi8uLi8uLi9zaGFyZWQvc2hhcmVkLm1vZHVsZSc7XG5pbXBvcnQgeyBPRGF0ZUlucHV0TW9kdWxlIH0gZnJvbSAnLi4vZGF0ZS1pbnB1dC9vLWRhdGUtaW5wdXQubW9kdWxlJztcbmltcG9ydCB7IE9Ib3VySW5wdXRNb2R1bGUgfSBmcm9tICcuLi9ob3VyLWlucHV0L28taG91ci1pbnB1dC5tb2R1bGUnO1xuaW1wb3J0IHsgT1RpbWVJbnB1dENvbXBvbmVudCB9IGZyb20gJy4vby10aW1lLWlucHV0LmNvbXBvbmVudCc7XG5cbkBOZ01vZHVsZSh7XG4gIGRlY2xhcmF0aW9uczogW09UaW1lSW5wdXRDb21wb25lbnRdLFxuICBpbXBvcnRzOiBbQ29tbW9uTW9kdWxlLCBPRGF0ZUlucHV0TW9kdWxlLCBPSG91cklucHV0TW9kdWxlLCBPU2hhcmVkTW9kdWxlXSxcbiAgZXhwb3J0czogW09UaW1lSW5wdXRDb21wb25lbnRdXG59KVxuZXhwb3J0IGNsYXNzIE9UaW1lSW5wdXRNb2R1bGUgeyB9XG4iXX0=

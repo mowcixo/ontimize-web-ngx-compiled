@@ -1,0 +1,30 @@
+import { Injector } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { OComponentPermissions } from '../../types/o-component-permissions.type';
+import { OFormPermissions } from '../../types/o-form-permissions.type';
+import { OPermissionsDefinition } from '../../types/o-permissions-definition.type';
+import { OPermissions } from '../../types/o-permissions.type';
+import { OTableMenuPermissions } from '../../types/o-table-menu-permissions.type';
+import { OTablePermissions } from '../../types/o-table-permissions.type';
+export declare class PermissionsService {
+    protected injector: Injector;
+    protected permissionsService: any;
+    protected ontimizePermissionsConfig: any;
+    protected permissions: OPermissionsDefinition;
+    constructor(injector: Injector);
+    protected configureService(): void;
+    restart(): void;
+    hasPermissions(): boolean;
+    getUserPermissionsAsPromise(): Promise<boolean>;
+    protected queryPermissions(): Observable<any>;
+    protected getPermissionIdFromActRoute(actRoute: ActivatedRoute): string;
+    protected getComponentPermissionsUsingRoute(attr: string, actRoute: ActivatedRoute): OComponentPermissions;
+    protected getOComponentPermissions(attr: string, actRoute: ActivatedRoute, selector: string): any;
+    getTablePermissions(attr: string, actRoute: ActivatedRoute): OTablePermissions;
+    getFormPermissions(attr: string, actRoute: ActivatedRoute): OFormPermissions;
+    getMenuPermissions(attr: string): OPermissions;
+    protected mergeOPermissionsArrays(permissionsA: OPermissions[], permissionsB: OPermissions[]): OPermissions[];
+    protected mergeOTableMenuPermissions(permissionsA: OTableMenuPermissions, permissionsB: OTableMenuPermissions): OTableMenuPermissions;
+    isPermissionIdRouteRestricted(permissionId: string): boolean;
+}

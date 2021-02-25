@@ -1,0 +1,38 @@
+import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
+export class OTabGroupDirective {
+    constructor(renderer, el) {
+        this.renderer = renderer;
+        this.el = el;
+        this._mode = 'ontimize';
+        this._defaultMode = 'ontimize';
+    }
+    set mode(mode) {
+        this._mode = mode;
+        this.applyMode();
+    }
+    get mode() {
+        return this._mode;
+    }
+    applyMode(mode) {
+        this.renderer.removeClass(this.el.nativeElement, OTabGroupDirective.OTabModes.material);
+        this.renderer.removeClass(this.el.nativeElement, OTabGroupDirective.OTabModes.ontimize);
+        this.renderer.addClass(this.el.nativeElement, OTabGroupDirective.OTabModes[this.mode || this._defaultMode]);
+    }
+}
+OTabGroupDirective.OTabModes = {
+    ontimize: 'o-tab-ontimize',
+    material: 'o-tab-material'
+};
+OTabGroupDirective.decorators = [
+    { type: Directive, args: [{
+                selector: '[oTabGroup]'
+            },] }
+];
+OTabGroupDirective.ctorParameters = () => [
+    { type: Renderer2 },
+    { type: ElementRef }
+];
+OTabGroupDirective.propDecorators = {
+    mode: [{ type: Input, args: ['oTabGroup',] }]
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiby10YWItZ3JvdXAuZGlyZWN0aXZlLmpzIiwic291cmNlUm9vdCI6Im5nOi8vb250aW1pemUtd2ViLW5neC8iLCJzb3VyY2VzIjpbImxpYi9kaXJlY3RpdmVzL28tdGFiLWdyb3VwLmRpcmVjdGl2ZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEVBQUUsU0FBUyxFQUFFLFVBQVUsRUFBRSxLQUFLLEVBQUUsU0FBUyxFQUFFLE1BQU0sZUFBZSxDQUFDO0FBT3hFLE1BQU0sT0FBTyxrQkFBa0I7SUFvQjdCLFlBQXNCLFFBQW1CLEVBQVksRUFBYztRQUE3QyxhQUFRLEdBQVIsUUFBUSxDQUFXO1FBQVksT0FBRSxHQUFGLEVBQUUsQ0FBWTtRQWJ6RCxVQUFLLEdBQWEsVUFBVSxDQUFDO1FBQzdCLGlCQUFZLEdBQWEsVUFBVSxDQUFDO0lBWXlCLENBQUM7SUFWeEUsSUFDSSxJQUFJLENBQUMsSUFBYztRQUNyQixJQUFJLENBQUMsS0FBSyxHQUFHLElBQUksQ0FBQztRQUNsQixJQUFJLENBQUMsU0FBUyxFQUFFLENBQUM7SUFDbkIsQ0FBQztJQUVELElBQUksSUFBSTtRQUNOLE9BQU8sSUFBSSxDQUFDLEtBQUssQ0FBQztJQUNwQixDQUFDO0lBSVMsU0FBUyxDQUFDLElBQWU7UUFDakMsSUFBSSxDQUFDLFFBQVEsQ0FBQyxXQUFXLENBQUMsSUFBSSxDQUFDLEVBQUUsQ0FBQyxhQUFhLEVBQUUsa0JBQWtCLENBQUMsU0FBUyxDQUFDLFFBQVEsQ0FBQyxDQUFDO1FBQ3hGLElBQUksQ0FBQyxRQUFRLENBQUMsV0FBVyxDQUFDLElBQUksQ0FBQyxFQUFFLENBQUMsYUFBYSxFQUFFLGtCQUFrQixDQUFDLFNBQVMsQ0FBQyxRQUFRLENBQUMsQ0FBQztRQUN4RixJQUFJLENBQUMsUUFBUSxDQUFDLFFBQVEsQ0FBQyxJQUFJLENBQUMsRUFBRSxDQUFDLGFBQWEsRUFBRSxrQkFBa0IsQ0FBQyxTQUFTLENBQUMsSUFBSSxDQUFDLElBQUksSUFBSSxJQUFJLENBQUMsWUFBWSxDQUFDLENBQUMsQ0FBQztJQUM5RyxDQUFDOztBQXhCZ0IsNEJBQVMsR0FBRztJQUMzQixRQUFRLEVBQUUsZ0JBQWdCO0lBQzFCLFFBQVEsRUFBRSxnQkFBZ0I7Q0FDM0IsQ0FBQzs7WUFSSCxTQUFTLFNBQUM7Z0JBQ1QsUUFBUSxFQUFFLGFBQWE7YUFDeEI7OztZQU5zQyxTQUFTO1lBQTVCLFVBQVU7OzttQkFpQjNCLEtBQUssU0FBQyxXQUFXIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgRGlyZWN0aXZlLCBFbGVtZW50UmVmLCBJbnB1dCwgUmVuZGVyZXIyIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5cbmV4cG9ydCB0eXBlIE9UYWJNb2RlID0gJ29udGltaXplJyB8ICdtYXRlcmlhbCc7XG5cbkBEaXJlY3RpdmUoe1xuICBzZWxlY3RvcjogJ1tvVGFiR3JvdXBdJ1xufSlcbmV4cG9ydCBjbGFzcyBPVGFiR3JvdXBEaXJlY3RpdmUge1xuXG4gIHByb3RlY3RlZCBzdGF0aWMgT1RhYk1vZGVzID0ge1xuICAgIG9udGltaXplOiAnby10YWItb250aW1pemUnLFxuICAgIG1hdGVyaWFsOiAnby10YWItbWF0ZXJpYWwnXG4gIH07XG5cbiAgcHJvdGVjdGVkIF9tb2RlOiBPVGFiTW9kZSA9ICdvbnRpbWl6ZSc7XG4gIHByb3RlY3RlZCBfZGVmYXVsdE1vZGU6IE9UYWJNb2RlID0gJ29udGltaXplJztcblxuICBASW5wdXQoJ29UYWJHcm91cCcpXG4gIHNldCBtb2RlKG1vZGU6IE9UYWJNb2RlKSB7XG4gICAgdGhpcy5fbW9kZSA9IG1vZGU7XG4gICAgdGhpcy5hcHBseU1vZGUoKTtcbiAgfVxuXG4gIGdldCBtb2RlKCk6IE9UYWJNb2RlIHtcbiAgICByZXR1cm4gdGhpcy5fbW9kZTtcbiAgfVxuXG4gIGNvbnN0cnVjdG9yKHByb3RlY3RlZCByZW5kZXJlcjogUmVuZGVyZXIyLCBwcm90ZWN0ZWQgZWw6IEVsZW1lbnRSZWYpIHsgfVxuXG4gIHByb3RlY3RlZCBhcHBseU1vZGUobW9kZT86IE9UYWJNb2RlKTogdm9pZCB7XG4gICAgdGhpcy5yZW5kZXJlci5yZW1vdmVDbGFzcyh0aGlzLmVsLm5hdGl2ZUVsZW1lbnQsIE9UYWJHcm91cERpcmVjdGl2ZS5PVGFiTW9kZXMubWF0ZXJpYWwpO1xuICAgIHRoaXMucmVuZGVyZXIucmVtb3ZlQ2xhc3ModGhpcy5lbC5uYXRpdmVFbGVtZW50LCBPVGFiR3JvdXBEaXJlY3RpdmUuT1RhYk1vZGVzLm9udGltaXplKTtcbiAgICB0aGlzLnJlbmRlcmVyLmFkZENsYXNzKHRoaXMuZWwubmF0aXZlRWxlbWVudCwgT1RhYkdyb3VwRGlyZWN0aXZlLk9UYWJNb2Rlc1t0aGlzLm1vZGUgfHwgdGhpcy5fZGVmYXVsdE1vZGVdKTtcbiAgfVxuXG59XG4iXX0=

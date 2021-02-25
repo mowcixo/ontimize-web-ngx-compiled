@@ -1,0 +1,15 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { OSharedModule } from '../../../shared/shared.module';
+import { ORealInputModule } from '../real-input/o-real-input.module';
+import { OPercentInputComponent } from './o-percent-input.component';
+export class OPercentInputModule {
+}
+OPercentInputModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [OPercentInputComponent],
+                imports: [CommonModule, OSharedModule, ORealInputModule],
+                exports: [OPercentInputComponent]
+            },] }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiby1wZXJjZW50LWlucHV0Lm1vZHVsZS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL29udGltaXplLXdlYi1uZ3gvIiwic291cmNlcyI6WyJsaWIvY29tcG9uZW50cy9pbnB1dC9wZXJjZW50LWlucHV0L28tcGVyY2VudC1pbnB1dC5tb2R1bGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFlBQVksRUFBRSxNQUFNLGlCQUFpQixDQUFDO0FBQy9DLE9BQU8sRUFBRSxRQUFRLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFFekMsT0FBTyxFQUFFLGFBQWEsRUFBRSxNQUFNLCtCQUErQixDQUFDO0FBQzlELE9BQU8sRUFBRSxnQkFBZ0IsRUFBRSxNQUFNLG1DQUFtQyxDQUFDO0FBQ3JFLE9BQU8sRUFBRSxzQkFBc0IsRUFBRSxNQUFNLDZCQUE2QixDQUFDO0FBT3JFLE1BQU0sT0FBTyxtQkFBbUI7OztZQUwvQixRQUFRLFNBQUM7Z0JBQ1IsWUFBWSxFQUFFLENBQUMsc0JBQXNCLENBQUM7Z0JBQ3RDLE9BQU8sRUFBRSxDQUFDLFlBQVksRUFBRSxhQUFhLEVBQUUsZ0JBQWdCLENBQUM7Z0JBQ3hELE9BQU8sRUFBRSxDQUFDLHNCQUFzQixDQUFDO2FBQ2xDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tbW9uTW9kdWxlIH0gZnJvbSAnQGFuZ3VsYXIvY29tbW9uJztcbmltcG9ydCB7IE5nTW9kdWxlIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5cbmltcG9ydCB7IE9TaGFyZWRNb2R1bGUgfSBmcm9tICcuLi8uLi8uLi9zaGFyZWQvc2hhcmVkLm1vZHVsZSc7XG5pbXBvcnQgeyBPUmVhbElucHV0TW9kdWxlIH0gZnJvbSAnLi4vcmVhbC1pbnB1dC9vLXJlYWwtaW5wdXQubW9kdWxlJztcbmltcG9ydCB7IE9QZXJjZW50SW5wdXRDb21wb25lbnQgfSBmcm9tICcuL28tcGVyY2VudC1pbnB1dC5jb21wb25lbnQnO1xuXG5ATmdNb2R1bGUoe1xuICBkZWNsYXJhdGlvbnM6IFtPUGVyY2VudElucHV0Q29tcG9uZW50XSxcbiAgaW1wb3J0czogW0NvbW1vbk1vZHVsZSwgT1NoYXJlZE1vZHVsZSwgT1JlYWxJbnB1dE1vZHVsZV0sXG4gIGV4cG9ydHM6IFtPUGVyY2VudElucHV0Q29tcG9uZW50XVxufSlcbmV4cG9ydCBjbGFzcyBPUGVyY2VudElucHV0TW9kdWxlIHsgfVxuIl19

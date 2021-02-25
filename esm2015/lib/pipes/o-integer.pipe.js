@@ -1,0 +1,20 @@
+import { Injector, Pipe } from '@angular/core';
+import { NumberService } from '../services/number.service';
+export class OIntegerPipe {
+    constructor(injector) {
+        this.injector = injector;
+        this.numberService = this.injector.get(NumberService);
+    }
+    transform(text, args) {
+        return this.numberService.getIntegerValue(text, args);
+    }
+}
+OIntegerPipe.decorators = [
+    { type: Pipe, args: [{
+                name: 'oInteger'
+            },] }
+];
+OIntegerPipe.ctorParameters = () => [
+    { type: Injector }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiby1pbnRlZ2VyLnBpcGUuanMiLCJzb3VyY2VSb290Ijoibmc6Ly9vbnRpbWl6ZS13ZWItbmd4LyIsInNvdXJjZXMiOlsibGliL3BpcGVzL28taW50ZWdlci5waXBlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFpQixNQUFNLGVBQWUsQ0FBQztBQUU5RCxPQUFPLEVBQUUsYUFBYSxFQUFFLE1BQU0sNEJBQTRCLENBQUM7QUFZM0QsTUFBTSxPQUFPLFlBQVk7SUFJdkIsWUFBc0IsUUFBa0I7UUFBbEIsYUFBUSxHQUFSLFFBQVEsQ0FBVTtRQUN0QyxJQUFJLENBQUMsYUFBYSxHQUFHLElBQUksQ0FBQyxRQUFRLENBQUMsR0FBRyxDQUFDLGFBQWEsQ0FBQyxDQUFDO0lBQ3hELENBQUM7SUFFRCxTQUFTLENBQUMsSUFBWSxFQUFFLElBQTBCO1FBQ2hELE9BQU8sSUFBSSxDQUFDLGFBQWEsQ0FBQyxlQUFlLENBQUMsSUFBSSxFQUFFLElBQUksQ0FBQyxDQUFDO0lBQ3hELENBQUM7OztZQWRGLElBQUksU0FBQztnQkFDSixJQUFJLEVBQUUsVUFBVTthQUNqQjs7O1lBWlEsUUFBUSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEluamVjdG9yLCBQaXBlLCBQaXBlVHJhbnNmb3JtIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5cbmltcG9ydCB7IE51bWJlclNlcnZpY2UgfSBmcm9tICcuLi9zZXJ2aWNlcy9udW1iZXIuc2VydmljZSc7XG5cbmV4cG9ydCBpbnRlcmZhY2UgSUludGVnZXJQaXBlQXJndW1lbnQge1xuICBncm91cGluZz86IGJvb2xlYW47XG4gIHRob3VzYW5kU2VwYXJhdG9yPzogc3RyaW5nO1xuICBsb2NhbGU/OiBzdHJpbmc7XG59XG5cbkBQaXBlKHtcbiAgbmFtZTogJ29JbnRlZ2VyJ1xufSlcblxuZXhwb3J0IGNsYXNzIE9JbnRlZ2VyUGlwZSBpbXBsZW1lbnRzIFBpcGVUcmFuc2Zvcm0ge1xuXG4gIHByb3RlY3RlZCBudW1iZXJTZXJ2aWNlOiBOdW1iZXJTZXJ2aWNlO1xuXG4gIGNvbnN0cnVjdG9yKHByb3RlY3RlZCBpbmplY3RvcjogSW5qZWN0b3IpIHtcbiAgICB0aGlzLm51bWJlclNlcnZpY2UgPSB0aGlzLmluamVjdG9yLmdldChOdW1iZXJTZXJ2aWNlKTtcbiAgfVxuXG4gIHRyYW5zZm9ybSh0ZXh0OiBzdHJpbmcsIGFyZ3M6IElJbnRlZ2VyUGlwZUFyZ3VtZW50KTogc3RyaW5nIHtcbiAgICByZXR1cm4gdGhpcy5udW1iZXJTZXJ2aWNlLmdldEludGVnZXJWYWx1ZSh0ZXh0LCBhcmdzKTtcbiAgfVxufVxuIl19

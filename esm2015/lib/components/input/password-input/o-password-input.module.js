@@ -1,0 +1,15 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { OSharedModule } from '../../../shared/shared.module';
+import { OTextInputModule } from '../text-input/o-text-input.module';
+import { OPasswordInputComponent } from './o-password-input.component';
+export class OPasswordInputModule {
+}
+OPasswordInputModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [OPasswordInputComponent],
+                imports: [OSharedModule, CommonModule, OTextInputModule],
+                exports: [OPasswordInputComponent]
+            },] }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiby1wYXNzd29yZC1pbnB1dC5tb2R1bGUuanMiLCJzb3VyY2VSb290Ijoibmc6Ly9vbnRpbWl6ZS13ZWItbmd4LyIsInNvdXJjZXMiOlsibGliL2NvbXBvbmVudHMvaW5wdXQvcGFzc3dvcmQtaW5wdXQvby1wYXNzd29yZC1pbnB1dC5tb2R1bGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFlBQVksRUFBRSxNQUFNLGlCQUFpQixDQUFDO0FBQy9DLE9BQU8sRUFBRSxRQUFRLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFFekMsT0FBTyxFQUFFLGFBQWEsRUFBRSxNQUFNLCtCQUErQixDQUFDO0FBQzlELE9BQU8sRUFBRSxnQkFBZ0IsRUFBRSxNQUFNLG1DQUFtQyxDQUFDO0FBQ3JFLE9BQU8sRUFBRSx1QkFBdUIsRUFBRSxNQUFNLDhCQUE4QixDQUFDO0FBT3ZFLE1BQU0sT0FBTyxvQkFBb0I7OztZQUxoQyxRQUFRLFNBQUM7Z0JBQ1IsWUFBWSxFQUFFLENBQUMsdUJBQXVCLENBQUM7Z0JBQ3ZDLE9BQU8sRUFBRSxDQUFDLGFBQWEsRUFBRSxZQUFZLEVBQUUsZ0JBQWdCLENBQUM7Z0JBQ3hELE9BQU8sRUFBRSxDQUFDLHVCQUF1QixDQUFDO2FBQ25DIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tbW9uTW9kdWxlIH0gZnJvbSAnQGFuZ3VsYXIvY29tbW9uJztcbmltcG9ydCB7IE5nTW9kdWxlIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5cbmltcG9ydCB7IE9TaGFyZWRNb2R1bGUgfSBmcm9tICcuLi8uLi8uLi9zaGFyZWQvc2hhcmVkLm1vZHVsZSc7XG5pbXBvcnQgeyBPVGV4dElucHV0TW9kdWxlIH0gZnJvbSAnLi4vdGV4dC1pbnB1dC9vLXRleHQtaW5wdXQubW9kdWxlJztcbmltcG9ydCB7IE9QYXNzd29yZElucHV0Q29tcG9uZW50IH0gZnJvbSAnLi9vLXBhc3N3b3JkLWlucHV0LmNvbXBvbmVudCc7XG5cbkBOZ01vZHVsZSh7XG4gIGRlY2xhcmF0aW9uczogW09QYXNzd29yZElucHV0Q29tcG9uZW50XSxcbiAgaW1wb3J0czogW09TaGFyZWRNb2R1bGUsIENvbW1vbk1vZHVsZSwgT1RleHRJbnB1dE1vZHVsZV0sXG4gIGV4cG9ydHM6IFtPUGFzc3dvcmRJbnB1dENvbXBvbmVudF1cbn0pXG5leHBvcnQgY2xhc3MgT1Bhc3N3b3JkSW5wdXRNb2R1bGUge1xufVxuIl19

@@ -1,0 +1,37 @@
+import { EventEmitter } from '@angular/core';
+import { IFormControlComponent } from '../../../interfaces/form-control-component.interface';
+import { IFormDataComponent } from '../../../interfaces/form-data-component.interface';
+import { OFormComponent } from '../o-form.component';
+export declare class OFormCacheClass {
+    protected form: OFormComponent;
+    protected initialDataCache: object;
+    protected formDataCache: object;
+    protected valueChangesStack: Array<any>;
+    protected _componentsSubscritpions: any;
+    protected blockCaching: boolean;
+    protected initializedCache: boolean;
+    onCacheEmptyStateChanges: EventEmitter<boolean>;
+    onCacheStateChanges: EventEmitter<any>;
+    protected changedFormControls: string[];
+    constructor(form: OFormComponent);
+    protected updateFormDataCache(): void;
+    protected addChangeToStack(comp: IFormControlComponent): void;
+    protected registerComponentCaching(comp: IFormDataComponent): void;
+    getCachedValue(attr: string): any;
+    destroy(): void;
+    protected removeUndefinedProperties(arg: any): any;
+    registerCache(): void;
+    initializeCache(val: any): void;
+    getInitialDataCache(): object;
+    getDataCache(): object;
+    restartCache(): void;
+    setCacheSnapshot(): void;
+    undoLastChange(options?: any): void;
+    protected undoComponentValue(attr: string, val: any): void;
+    protected hasComponentChanged(attr: string, comp: IFormControlComponent): boolean;
+    protected getCacheLastValue(attr: string): any;
+    protected updateChangesStack(attr: string): void;
+    readonly isCacheStackEmpty: boolean;
+    isInitialStateChanged(): boolean;
+    getChangedFormControlsAttr(): string[];
+}

@@ -1,0 +1,38 @@
+import { AfterContentChecked, AfterViewInit, ElementRef, Injector, OnDestroy } from '@angular/core';
+export declare const DEFAULT_INPUTS_O_CONTAINER: string[];
+export declare class OContainerComponent implements AfterViewInit, OnDestroy, AfterContentChecked {
+    protected elRef: ElementRef;
+    protected injector: Injector;
+    protected matFormDefaultOption: any;
+    static APPEARANCE_OUTLINE: string;
+    oattr: string;
+    title: string;
+    protected _elevation: number;
+    protected defaultLayoutAlign: string;
+    protected _layoutAlign: string;
+    icon: string;
+    protected _appearance: string;
+    protected _layoutGap: string;
+    private _outlineGapCalculationNeededImmediately;
+    protected titleObserver: MutationObserver;
+    protected _titleEl: ElementRef;
+    containerTitle: ElementRef;
+    protected _containerRef: ElementRef;
+    constructor(elRef: ElementRef, injector: Injector, matFormDefaultOption: any);
+    ngAfterViewInit(): void;
+    ngAfterContentChecked(): void;
+    ngOnDestroy(): void;
+    getAttribute(): any;
+    appearance: string;
+    elevation: number;
+    layoutAlign: string;
+    layoutGap: string;
+    hasHeader(): boolean;
+    isAppearanceOutline(): boolean;
+    hasTitleInAppearanceOutline(): boolean;
+    protected propagateElevationToDOM(): void;
+    protected cleanElevationCSSclasses(): void;
+    protected updateOutlineGap(): void;
+    protected registerObserver(): void;
+    protected unRegisterObserver(): void;
+}

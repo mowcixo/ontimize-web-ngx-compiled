@@ -1,0 +1,34 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injector } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { AppConfig } from '../config/app-config';
+import { ServiceResponse } from '../interfaces/service-response.interface';
+import { ORemoteConfigurationColumns } from '../types/remote-configuration.type';
+import { SessionInfo } from '../types/session-info.type';
+import { LocalStorageService } from './local-storage.service';
+import { LoginStorageService } from './login-storage.service';
+export declare class ORemoteConfigurationService {
+    protected injector: Injector;
+    static DEFAULT_COLUMN_USER: string;
+    static DEFAULT_COLUMN_APPID: string;
+    static DEFAULT_COLUMN_CONFIG: string;
+    static DEFAULT_STORAGE_TIMEOUT: number;
+    protected localStorageService: LocalStorageService;
+    protected loginStorageService: LoginStorageService;
+    protected httpClient: HttpClient;
+    protected _appConfig: AppConfig;
+    protected _url: string;
+    protected _uuid: string;
+    protected _timeout: number;
+    protected timerSubscription: Subscription;
+    protected storeSubscription: Subscription;
+    protected _columns: ORemoteConfigurationColumns;
+    beforeunloadHandler(): void;
+    constructor(injector: Injector);
+    getUserConfiguration(): Observable<ServiceResponse>;
+    storeUserConfiguration(): Observable<any>;
+    initialize(): Observable<any>;
+    finalize(): Observable<any>;
+    protected hasSession(sessionInfo: SessionInfo): boolean;
+    protected buildHeaders(): HttpHeaders;
+}

@@ -1,0 +1,32 @@
+import { HttpClient } from '@angular/common/http';
+import { EventEmitter, Injector } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { Observable, Subscriber } from 'rxjs';
+import { AppConfig } from '../../config/app-config';
+import { MomentService } from '../../services/moment.service';
+export declare function translateServiceFactory(injector: Injector): any;
+export declare class OTranslateService {
+    protected injector: Injector;
+    static ASSETS_PATH: string;
+    static ASSETS_EXTENSION: string;
+    DEFAULT_LANG: string;
+    onLanguageChanged: EventEmitter<any>;
+    protected ngxTranslateService: TranslateService;
+    protected momentService: MomentService;
+    protected httpClient: HttpClient;
+    protected localStorageKey: string;
+    protected notFoundLang: Array<string>;
+    protected appConfig: AppConfig;
+    protected existingLangFiles: Array<string>;
+    constructor(injector: Injector);
+    storeLanguage(language: string): void;
+    getStoredLanguage(): string;
+    protected checkExistingLangFile(lang: string): Promise<any>;
+    setDefaultLang(lang: string): void;
+    get(text: string, values?: any[]): string;
+    setAppLang(lang: string): Observable<any>;
+    use(lang: string, observer?: Subscriber<any>): void;
+    protected propagateLang(lang: string, langRes?: any, observer?: Subscriber<any>): void;
+    getCurrentLang(): string;
+    getBrowserLang(): any;
+}

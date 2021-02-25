@@ -1,0 +1,46 @@
+import { ChangeDetectionStrategy, Component, Injector, TemplateRef, ViewChild } from '@angular/core';
+import { OMomentPipe } from '../../../../../pipes/o-moment.pipe';
+import { Util } from '../../../../../util/util';
+import { DEFAULT_INPUTS_O_BASE_TABLE_CELL_RENDERER, OBaseTableCellRenderer } from '../o-base-table-cell-renderer.class';
+export const DEFAULT_INPUTS_O_TABLE_CELL_RENDERER_TIME = [
+    ...DEFAULT_INPUTS_O_BASE_TABLE_CELL_RENDERER,
+    'format'
+];
+export class OTableCellRendererTimeComponent extends OBaseTableCellRenderer {
+    constructor(injector) {
+        super(injector);
+        this.injector = injector;
+        this._format = 'L HH:mm a';
+        this.tableColumn.type = 'time';
+        this.setComponentPipe();
+    }
+    set format(value) {
+        if (Util.isDefined(value)) {
+            this._format = value;
+        }
+    }
+    setComponentPipe() {
+        this.componentPipe = new OMomentPipe(this.injector);
+    }
+    initialize() {
+        super.initialize();
+        this.pipeArguments = {
+            format: this._format
+        };
+    }
+}
+OTableCellRendererTimeComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'o-table-cell-renderer-time',
+                template: "<ng-template #templateref let-cellvalue=\"cellvalue\">\n   {{getCellData(cellvalue)}}\n</ng-template>",
+                changeDetection: ChangeDetectionStrategy.OnPush,
+                inputs: DEFAULT_INPUTS_O_TABLE_CELL_RENDERER_TIME
+            }] }
+];
+OTableCellRendererTimeComponent.ctorParameters = () => [
+    { type: Injector }
+];
+OTableCellRendererTimeComponent.propDecorators = {
+    templateref: [{ type: ViewChild, args: ['templateref', { read: TemplateRef, static: true },] }]
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiby10YWJsZS1jZWxsLXJlbmRlcmVyLXRpbWUuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6Im5nOi8vb250aW1pemUtd2ViLW5neC8iLCJzb3VyY2VzIjpbImxpYi9jb21wb25lbnRzL3RhYmxlL2NvbHVtbi9jZWxsLXJlbmRlcmVyL3RpbWUvby10YWJsZS1jZWxsLXJlbmRlcmVyLXRpbWUuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSx1QkFBdUIsRUFBRSxTQUFTLEVBQUUsUUFBUSxFQUFVLFdBQVcsRUFBRSxTQUFTLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFFN0csT0FBTyxFQUF1QixXQUFXLEVBQUUsTUFBTSxvQ0FBb0MsQ0FBQztBQUN0RixPQUFPLEVBQUUsSUFBSSxFQUFFLE1BQU0sMEJBQTBCLENBQUM7QUFDaEQsT0FBTyxFQUFFLHlDQUF5QyxFQUFFLHNCQUFzQixFQUFFLE1BQU0scUNBQXFDLENBQUM7QUFFeEgsTUFBTSxDQUFDLE1BQU0seUNBQXlDLEdBQUc7SUFDdkQsR0FBRyx5Q0FBeUM7SUFDNUMsUUFBUTtDQUNULENBQUM7QUFRRixNQUFNLE9BQU8sK0JBQWdDLFNBQVEsc0JBQXNCO0lBVXpFLFlBQXNCLFFBQWtCO1FBQ3RDLEtBQUssQ0FBQyxRQUFRLENBQUMsQ0FBQztRQURJLGFBQVEsR0FBUixRQUFRLENBQVU7UUFMOUIsWUFBTyxHQUFXLFdBQVcsQ0FBQztRQU90QyxJQUFJLENBQUMsV0FBVyxDQUFDLElBQUksR0FBRyxNQUFNLENBQUM7UUFDL0IsSUFBSSxDQUFDLGdCQUFnQixFQUFFLENBQUM7SUFDMUIsQ0FBQztJQUVELElBQUksTUFBTSxDQUFDLEtBQWE7UUFDdEIsSUFBSSxJQUFJLENBQUMsU0FBUyxDQUFDLEtBQUssQ0FBQyxFQUFFO1lBQ3pCLElBQUksQ0FBQyxPQUFPLEdBQUcsS0FBSyxDQUFDO1NBQ3RCO0lBQ0gsQ0FBQztJQUNELGdCQUFnQjtRQUNkLElBQUksQ0FBQyxhQUFhLEdBQUcsSUFBSSxXQUFXLENBQUMsSUFBSSxDQUFDLFFBQVEsQ0FBQyxDQUFDO0lBQ3RELENBQUM7SUFFRCxVQUFVO1FBQ1IsS0FBSyxDQUFDLFVBQVUsRUFBRSxDQUFDO1FBQ25CLElBQUksQ0FBQyxhQUFhLEdBQUc7WUFDbkIsTUFBTSxFQUFFLElBQUksQ0FBQyxPQUFPO1NBQ3JCLENBQUM7SUFDSixDQUFDOzs7WUFwQ0YsU0FBUyxTQUFDO2dCQUNULFFBQVEsRUFBRSw0QkFBNEI7Z0JBQ3RDLGlIQUEwRDtnQkFDMUQsZUFBZSxFQUFFLHVCQUF1QixDQUFDLE1BQU07Z0JBQy9DLE1BQU0sRUFBRSx5Q0FBeUM7YUFDbEQ7OztZQWhCNEMsUUFBUTs7OzBCQXlCbEQsU0FBUyxTQUFDLGFBQWEsRUFBRSxFQUFFLElBQUksRUFBRSxXQUFXLEVBQUUsTUFBTSxFQUFFLElBQUksRUFBRSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENoYW5nZURldGVjdGlvblN0cmF0ZWd5LCBDb21wb25lbnQsIEluamVjdG9yLCBPbkluaXQsIFRlbXBsYXRlUmVmLCBWaWV3Q2hpbGQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcblxuaW1wb3J0IHsgSU1vbWVudFBpcGVBcmd1bWVudCwgT01vbWVudFBpcGUgfSBmcm9tICcuLi8uLi8uLi8uLi8uLi9waXBlcy9vLW1vbWVudC5waXBlJztcbmltcG9ydCB7IFV0aWwgfSBmcm9tICcuLi8uLi8uLi8uLi8uLi91dGlsL3V0aWwnO1xuaW1wb3J0IHsgREVGQVVMVF9JTlBVVFNfT19CQVNFX1RBQkxFX0NFTExfUkVOREVSRVIsIE9CYXNlVGFibGVDZWxsUmVuZGVyZXIgfSBmcm9tICcuLi9vLWJhc2UtdGFibGUtY2VsbC1yZW5kZXJlci5jbGFzcyc7XG5cbmV4cG9ydCBjb25zdCBERUZBVUxUX0lOUFVUU19PX1RBQkxFX0NFTExfUkVOREVSRVJfVElNRSA9IFtcbiAgLi4uREVGQVVMVF9JTlBVVFNfT19CQVNFX1RBQkxFX0NFTExfUkVOREVSRVIsXG4gICdmb3JtYXQnXG5dO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdvLXRhYmxlLWNlbGwtcmVuZGVyZXItdGltZScsXG4gIHRlbXBsYXRlVXJsOiAnLi9vLXRhYmxlLWNlbGwtcmVuZGVyZXItdGltZS5jb21wb25lbnQuaHRtbCcsXG4gIGNoYW5nZURldGVjdGlvbjogQ2hhbmdlRGV0ZWN0aW9uU3RyYXRlZ3kuT25QdXNoLFxuICBpbnB1dHM6IERFRkFVTFRfSU5QVVRTX09fVEFCTEVfQ0VMTF9SRU5ERVJFUl9USU1FXG59KVxuZXhwb3J0IGNsYXNzIE9UYWJsZUNlbGxSZW5kZXJlclRpbWVDb21wb25lbnQgZXh0ZW5kcyBPQmFzZVRhYmxlQ2VsbFJlbmRlcmVyIGltcGxlbWVudHMgT25Jbml0IHtcblxuICBwcm90ZWN0ZWQgY29tcG9uZW50UGlwZTogT01vbWVudFBpcGU7XG4gIHByb3RlY3RlZCBwaXBlQXJndW1lbnRzOiBJTW9tZW50UGlwZUFyZ3VtZW50O1xuXG4gIHByb3RlY3RlZCBfZm9ybWF0OiBzdHJpbmcgPSAnTCBISDptbSBhJztcbiAgcHJvdGVjdGVkIGxvY2FsZTogc3RyaW5nO1xuXG4gIEBWaWV3Q2hpbGQoJ3RlbXBsYXRlcmVmJywgeyByZWFkOiBUZW1wbGF0ZVJlZiwgc3RhdGljOiB0cnVlIH0pIHB1YmxpYyB0ZW1wbGF0ZXJlZjogVGVtcGxhdGVSZWY8YW55PjtcblxuICBjb25zdHJ1Y3Rvcihwcm90ZWN0ZWQgaW5qZWN0b3I6IEluamVjdG9yKSB7XG4gICAgc3VwZXIoaW5qZWN0b3IpO1xuICAgIHRoaXMudGFibGVDb2x1bW4udHlwZSA9ICd0aW1lJztcbiAgICB0aGlzLnNldENvbXBvbmVudFBpcGUoKTtcbiAgfVxuXG4gIHNldCBmb3JtYXQodmFsdWU6IHN0cmluZykge1xuICAgIGlmIChVdGlsLmlzRGVmaW5lZCh2YWx1ZSkpIHtcbiAgICAgIHRoaXMuX2Zvcm1hdCA9IHZhbHVlO1xuICAgIH1cbiAgfVxuICBzZXRDb21wb25lbnRQaXBlKCkge1xuICAgIHRoaXMuY29tcG9uZW50UGlwZSA9IG5ldyBPTW9tZW50UGlwZSh0aGlzLmluamVjdG9yKTtcbiAgfVxuXG4gIGluaXRpYWxpemUoKSB7XG4gICAgc3VwZXIuaW5pdGlhbGl6ZSgpO1xuICAgIHRoaXMucGlwZUFyZ3VtZW50cyA9IHtcbiAgICAgIGZvcm1hdDogdGhpcy5fZm9ybWF0XG4gICAgfTtcbiAgfVxufVxuIl19

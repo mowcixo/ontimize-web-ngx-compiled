@@ -1,0 +1,15 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { OSharedModule } from '../../../shared/shared.module';
+import { OFormNavigationComponent } from '../navigation/o-form-navigation.component';
+import { OFormToolbarComponent } from './o-form-toolbar.component';
+export class OFormToolbarModule {
+}
+OFormToolbarModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [OFormNavigationComponent, OFormToolbarComponent],
+                imports: [CommonModule, OSharedModule],
+                exports: [OFormNavigationComponent, OFormToolbarComponent]
+            },] }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiby1mb3JtLXRvb2xiYXIubW9kdWxlLmpzIiwic291cmNlUm9vdCI6Im5nOi8vb250aW1pemUtd2ViLW5neC8iLCJzb3VyY2VzIjpbImxpYi9jb21wb25lbnRzL2Zvcm0vdG9vbGJhci9vLWZvcm0tdG9vbGJhci5tb2R1bGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFlBQVksRUFBRSxNQUFNLGlCQUFpQixDQUFDO0FBQy9DLE9BQU8sRUFBRSxRQUFRLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFFekMsT0FBTyxFQUFFLGFBQWEsRUFBRSxNQUFNLCtCQUErQixDQUFDO0FBQzlELE9BQU8sRUFBRSx3QkFBd0IsRUFBRSxNQUFNLDJDQUEyQyxDQUFDO0FBQ3JGLE9BQU8sRUFBRSxxQkFBcUIsRUFBRSxNQUFNLDRCQUE0QixDQUFDO0FBT25FLE1BQU0sT0FBTyxrQkFBa0I7OztZQUw5QixRQUFRLFNBQUM7Z0JBQ1IsWUFBWSxFQUFFLENBQUMsd0JBQXdCLEVBQUUscUJBQXFCLENBQUM7Z0JBQy9ELE9BQU8sRUFBRSxDQUFDLFlBQVksRUFBRSxhQUFhLENBQUM7Z0JBQ3RDLE9BQU8sRUFBRSxDQUFDLHdCQUF3QixFQUFFLHFCQUFxQixDQUFDO2FBQzNEIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tbW9uTW9kdWxlIH0gZnJvbSAnQGFuZ3VsYXIvY29tbW9uJztcbmltcG9ydCB7IE5nTW9kdWxlIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5cbmltcG9ydCB7IE9TaGFyZWRNb2R1bGUgfSBmcm9tICcuLi8uLi8uLi9zaGFyZWQvc2hhcmVkLm1vZHVsZSc7XG5pbXBvcnQgeyBPRm9ybU5hdmlnYXRpb25Db21wb25lbnQgfSBmcm9tICcuLi9uYXZpZ2F0aW9uL28tZm9ybS1uYXZpZ2F0aW9uLmNvbXBvbmVudCc7XG5pbXBvcnQgeyBPRm9ybVRvb2xiYXJDb21wb25lbnQgfSBmcm9tICcuL28tZm9ybS10b29sYmFyLmNvbXBvbmVudCc7XG5cbkBOZ01vZHVsZSh7XG4gIGRlY2xhcmF0aW9uczogW09Gb3JtTmF2aWdhdGlvbkNvbXBvbmVudCwgT0Zvcm1Ub29sYmFyQ29tcG9uZW50XSxcbiAgaW1wb3J0czogW0NvbW1vbk1vZHVsZSwgT1NoYXJlZE1vZHVsZV0sXG4gIGV4cG9ydHM6IFtPRm9ybU5hdmlnYXRpb25Db21wb25lbnQsIE9Gb3JtVG9vbGJhckNvbXBvbmVudF1cbn0pXG5leHBvcnQgY2xhc3MgT0Zvcm1Ub29sYmFyTW9kdWxlIHsgfVxuIl19

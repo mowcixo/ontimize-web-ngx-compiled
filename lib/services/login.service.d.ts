@@ -1,0 +1,33 @@
+import { EventEmitter, Injector } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IAuthService } from '../interfaces/auth-service.interface';
+import { ILoginService } from '../interfaces/login-service.interface';
+import { SessionInfo } from '../types/session-info.type';
+export declare class LoginService implements ILoginService {
+    protected injector: Injector;
+    onLogin: EventEmitter<any>;
+    onLogout: EventEmitter<any>;
+    private _user;
+    private _config;
+    private router;
+    private ontService;
+    private dialogService;
+    private loginStorageService;
+    constructor(injector: Injector);
+    readonly user: string;
+    readonly localStorageKey: string;
+    configureOntimizeAuthService(config: object): void;
+    retrieveAuthService(): Promise<IAuthService>;
+    login(user: string, password: string): Observable<any>;
+    onLoginSuccess(sessionId: string | number): void;
+    onLoginError(error: any): void;
+    logout(): Observable<any>;
+    onLogoutSuccess(sessionId: number): void;
+    onLogoutError(error: any): void;
+    sessionExpired(): void;
+    isLoggedIn(): boolean;
+    logoutAndRedirect(): void;
+    logoutWithConfirmationAndRedirect(): void;
+    getSessionInfo(): SessionInfo;
+    storeSessionInfo(info: SessionInfo): void;
+}

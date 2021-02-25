@@ -1,0 +1,37 @@
+import { AfterViewInit, ElementRef, Injector, OnInit } from '@angular/core';
+import { FormControl, ValidationErrors, ValidatorFn } from '@angular/forms';
+import { IIntegerPipeArgument, OIntegerPipe } from '../../../pipes/o-integer.pipe';
+import { FormValueOptions } from '../../../types/form-value-options.type';
+import { OFormComponent } from '../../form/o-form.component';
+import { OTextInputComponent } from '../text-input/o-text-input.component';
+export declare const DEFAULT_INPUTS_O_INTEGER_INPUT: string[];
+export declare const DEFAULT_OUTPUTS_O_INTEGER_INPUT: string[];
+export declare class OIntegerInputComponent extends OTextInputComponent implements AfterViewInit, OnInit {
+    inputType: string;
+    min: number;
+    max: number;
+    step: number;
+    protected grouping: boolean;
+    protected thousandSeparator: string;
+    protected olocale: string;
+    protected componentPipe: OIntegerPipe;
+    protected pipeArguments: IIntegerPipeArgument;
+    constructor(form: OFormComponent, elRef: ElementRef, injector: Injector);
+    initialize(): void;
+    setComponentPipe(): void;
+    ngOnInit(): void;
+    ngAfterViewInit(): void;
+    setData(value: any): void;
+    setValue(val: any, options?: FormValueOptions): void;
+    innerOnFocus(event: any): void;
+    innerOnBlur(event?: any): void;
+    setPipeValue(): void;
+    isEmpty(): boolean;
+    getInputEl(): any;
+    setNumberDOMValue(val: any): void;
+    setTextDOMValue(val: any): void;
+    resolveValidators(): ValidatorFn[];
+    protected minValidator(control: FormControl): ValidationErrors;
+    protected maxValidator(control: FormControl): ValidationErrors;
+    protected initializeStep(): void;
+}

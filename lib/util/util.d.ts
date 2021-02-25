@@ -1,0 +1,31 @@
+import { IDataService } from '../interfaces/data-service.interface';
+import { IFormDataComponent } from '../interfaces/form-data-component.interface';
+import { IPermissionsService } from '../interfaces/permissions-service.interface';
+import { ODateValueType } from '../types/o-date-value.type';
+export declare class Util {
+    static isObject(val: any): boolean;
+    static isArray(val: any): boolean;
+    static parseBoolean(value: string, defaultValue?: boolean): boolean;
+    static parseArray(value: string, excludeRepeated?: boolean): string[];
+    static parseParentKeysEquivalences(pKeysArray: Array<string>, separator?: string): object;
+    static encodeParentKeys(parentKeys: object): string;
+    static decodeParentKeys(parentKeys: string): object;
+    static isArrayEmpty(array: any[]): boolean;
+    static isDataService(arg: any): arg is IDataService;
+    static isPermissionsService(arg: any): arg is IPermissionsService;
+    static isFormDataComponent(arg: any): arg is IFormDataComponent;
+    static isEquivalent(a: any, b: any): boolean;
+    static equals(o1: any, o2: any): boolean;
+    static isDefined(value: any): boolean;
+    static normalizeString(value: string, toLowerCase?: boolean): string;
+    static flatten(array: Array<any>): Array<any>;
+    static getValuesFromObject(obj?: object): Array<any>;
+    static parseIconPosition(value: string, defaultValue?: string): string;
+    static copyToClipboard(data: string): void;
+    static checkPixelsValueString(value: string): boolean;
+    static extractPixelsValue(value: any, defaultValue?: number): number;
+    static parseOInputsOptions(elRef: any, oInputsOptions: any): void;
+    static escapeSpecialCharacter(S: string): string;
+    static differenceArrays(array1: Array<any>, array2: Array<any>): Array<any>;
+    static convertToODateValueType(val: any): ODateValueType;
+}

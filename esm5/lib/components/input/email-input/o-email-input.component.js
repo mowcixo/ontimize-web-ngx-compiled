@@ -1,0 +1,36 @@
+import * as tslib_1 from "tslib";
+import { Component, ElementRef, forwardRef, Inject, Injector, Optional, ViewEncapsulation } from '@angular/core';
+import { OValidators } from '../../../validators/o-validators';
+import { OFormComponent } from '../../form/o-form.component';
+import { DEFAULT_INPUTS_O_TEXT_INPUT, DEFAULT_OUTPUTS_O_TEXT_INPUT, OTextInputComponent, } from '../text-input/o-text-input.component';
+export var DEFAULT_INPUTS_O_EMAIL_INPUT = tslib_1.__spread(DEFAULT_INPUTS_O_TEXT_INPUT);
+export var DEFAULT_OUTPUTS_O_EMAIL_INPUT = tslib_1.__spread(DEFAULT_OUTPUTS_O_TEXT_INPUT);
+var OEmailInputComponent = (function (_super) {
+    tslib_1.__extends(OEmailInputComponent, _super);
+    function OEmailInputComponent(form, elRef, injector) {
+        return _super.call(this, form, elRef, injector) || this;
+    }
+    OEmailInputComponent.prototype.resolveValidators = function () {
+        var validators = _super.prototype.resolveValidators.call(this);
+        validators.push(OValidators.emailValidator);
+        return validators;
+    };
+    OEmailInputComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'o-email-input',
+                    template: "<div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" [formGroup]=\"getFormGroup()\" [matTooltip]=\"tooltip\"\n  [matTooltipClass]=\"tooltipClass\" [matTooltipPosition]=\"tooltipPosition\" [matTooltipShowDelay]=\"tooltipShowDelay\"\n  [matTooltipHideDelay]=\"tooltipHideDelay\">\n  <mat-form-field [appearance]=\"appearance\" [floatLabel]=\"floatLabel\" [hideRequiredMarker]=\"hideRequiredMarker\"\n    [class.custom-width]=\"hasCustomWidth\" class=\"icon-field\" fxFlexFill>\n    <mat-label *ngIf=\"labelVisible\">{{ olabel | oTranslate }}</mat-label>\n    <input matInput type=\"email\" [id]=\"getAttribute()\" [formControlName]=\"getAttribute()\" [placeholder]=\"placeHolder\"\n      (focus)=\"innerOnFocus($event)\" (blur)=\"innerOnBlur($event)\" [readonly]=\"isReadOnly\" [required]=\"isRequired\"\n      (change)=\"onChangeEvent($event)\">\n    <button type=\"button\" *ngIf=\"showClearButton\" matSuffix mat-icon-button (click)=\"onClickClearValue($event)\">\n      <mat-icon svgIcon=\"ontimize:close\"></mat-icon>\n    </button>\n    <mat-icon matSuffix [class.mat-disabled]=\"!enabled\" svgIcon=\"ontimize:mail_outline\"></mat-icon>\n    <mat-error *ngIf=\"hasError('required')\" text=\"{{ 'FORM_VALIDATION.REQUIRED' | oTranslate }}\"></mat-error>\n    <mat-error *ngIf=\"hasError('minlength')\"\n      text=\"{{ 'FORM_VALIDATION.MIN_LENGTH' | oTranslate }}: {{ getErrorValue('minlength', 'requiredLength') }}\">\n    </mat-error>\n    <mat-error *ngIf=\"hasError('maxlength')\"\n      text=\"{{ 'FORM_VALIDATION.MAX_LENGTH' | oTranslate }}: {{ getErrorValue('maxlength', 'requiredLength') }}\">\n    </mat-error>\n    <mat-error *ngIf=\"hasError('invalidEmailAddress')\" text=\"{{ 'FORM_VALIDATION.EMAIL_FORMAT' | oTranslate }}\">\n    </mat-error>\n    <mat-error *ngFor=\"let oError of getActiveOErrors()\" text=\"{{ oError.text | oTranslate }}\"></mat-error>\n  </mat-form-field>\n</div>",
+                    inputs: DEFAULT_INPUTS_O_EMAIL_INPUT,
+                    outputs: DEFAULT_OUTPUTS_O_EMAIL_INPUT,
+                    encapsulation: ViewEncapsulation.None,
+                    styles: [""]
+                }] }
+    ];
+    OEmailInputComponent.ctorParameters = function () { return [
+        { type: OFormComponent, decorators: [{ type: Optional }, { type: Inject, args: [forwardRef(function () { return OFormComponent; }),] }] },
+        { type: ElementRef },
+        { type: Injector }
+    ]; };
+    return OEmailInputComponent;
+}(OTextInputComponent));
+export { OEmailInputComponent };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiby1lbWFpbC1pbnB1dC5jb21wb25lbnQuanMiLCJzb3VyY2VSb290Ijoibmc6Ly9vbnRpbWl6ZS13ZWItbmd4LyIsInNvdXJjZXMiOlsibGliL2NvbXBvbmVudHMvaW5wdXQvZW1haWwtaW5wdXQvby1lbWFpbC1pbnB1dC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLE9BQU8sRUFBRSxTQUFTLEVBQUUsVUFBVSxFQUFFLFVBQVUsRUFBRSxNQUFNLEVBQUUsUUFBUSxFQUFVLFFBQVEsRUFBRSxpQkFBaUIsRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUd6SCxPQUFPLEVBQUUsV0FBVyxFQUFFLE1BQU0sa0NBQWtDLENBQUM7QUFDL0QsT0FBTyxFQUFFLGNBQWMsRUFBRSxNQUFNLDZCQUE2QixDQUFDO0FBQzdELE9BQU8sRUFDTCwyQkFBMkIsRUFDM0IsNEJBQTRCLEVBQzVCLG1CQUFtQixHQUNwQixNQUFNLHNDQUFzQyxDQUFDO0FBRTlDLE1BQU0sQ0FBQyxJQUFNLDRCQUE0QixvQkFDcEMsMkJBQTJCLENBQy9CLENBQUM7QUFFRixNQUFNLENBQUMsSUFBTSw2QkFBNkIsb0JBQ3JDLDRCQUE0QixDQUNoQyxDQUFDO0FBRUY7SUFRMEMsZ0RBQW1CO0lBRTNELDhCQUN3RCxJQUFvQixFQUMxRSxLQUFpQixFQUNqQixRQUFrQjtlQUNsQixrQkFBTSxJQUFJLEVBQUUsS0FBSyxFQUFFLFFBQVEsQ0FBQztJQUM5QixDQUFDO0lBRUQsZ0RBQWlCLEdBQWpCO1FBQ0UsSUFBTSxVQUFVLEdBQWtCLGlCQUFNLGlCQUFpQixXQUFFLENBQUM7UUFFNUQsVUFBVSxDQUFDLElBQUksQ0FBQyxXQUFXLENBQUMsY0FBYyxDQUFDLENBQUM7UUFDNUMsT0FBTyxVQUFVLENBQUM7SUFDcEIsQ0FBQzs7Z0JBdEJGLFNBQVMsU0FBQztvQkFDVCxRQUFRLEVBQUUsZUFBZTtvQkFDekIsKzNEQUE2QztvQkFFN0MsTUFBTSxFQUFFLDRCQUE0QjtvQkFDcEMsT0FBTyxFQUFFLDZCQUE2QjtvQkFDdEMsYUFBYSxFQUFFLGlCQUFpQixDQUFDLElBQUk7O2lCQUN0Qzs7O2dCQXRCUSxjQUFjLHVCQTBCbEIsUUFBUSxZQUFJLE1BQU0sU0FBQyxVQUFVLENBQUMsY0FBTSxPQUFBLGNBQWMsRUFBZCxDQUFjLENBQUM7Z0JBOUJwQyxVQUFVO2dCQUFzQixRQUFROztJQTJDNUQsMkJBQUM7Q0FBQSxBQXhCRCxDQVEwQyxtQkFBbUIsR0FnQjVEO1NBaEJZLG9CQUFvQiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgRWxlbWVudFJlZiwgZm9yd2FyZFJlZiwgSW5qZWN0LCBJbmplY3RvciwgT25Jbml0LCBPcHRpb25hbCwgVmlld0VuY2Fwc3VsYXRpb24gfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IFZhbGlkYXRvckZuIH0gZnJvbSAnQGFuZ3VsYXIvZm9ybXMnO1xuXG5pbXBvcnQgeyBPVmFsaWRhdG9ycyB9IGZyb20gJy4uLy4uLy4uL3ZhbGlkYXRvcnMvby12YWxpZGF0b3JzJztcbmltcG9ydCB7IE9Gb3JtQ29tcG9uZW50IH0gZnJvbSAnLi4vLi4vZm9ybS9vLWZvcm0uY29tcG9uZW50JztcbmltcG9ydCB7XG4gIERFRkFVTFRfSU5QVVRTX09fVEVYVF9JTlBVVCxcbiAgREVGQVVMVF9PVVRQVVRTX09fVEVYVF9JTlBVVCxcbiAgT1RleHRJbnB1dENvbXBvbmVudCxcbn0gZnJvbSAnLi4vdGV4dC1pbnB1dC9vLXRleHQtaW5wdXQuY29tcG9uZW50JztcblxuZXhwb3J0IGNvbnN0IERFRkFVTFRfSU5QVVRTX09fRU1BSUxfSU5QVVQgPSBbXG4gIC4uLkRFRkFVTFRfSU5QVVRTX09fVEVYVF9JTlBVVFxuXTtcblxuZXhwb3J0IGNvbnN0IERFRkFVTFRfT1VUUFVUU19PX0VNQUlMX0lOUFVUID0gW1xuICAuLi5ERUZBVUxUX09VVFBVVFNfT19URVhUX0lOUFVUXG5dO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdvLWVtYWlsLWlucHV0JyxcbiAgdGVtcGxhdGVVcmw6ICcuL28tZW1haWwtaW5wdXQuY29tcG9uZW50Lmh0bWwnLFxuICBzdHlsZVVybHM6IFsnLi9vLWVtYWlsLWlucHV0LmNvbXBvbmVudC5zY3NzJ10sXG4gIGlucHV0czogREVGQVVMVF9JTlBVVFNfT19FTUFJTF9JTlBVVCxcbiAgb3V0cHV0czogREVGQVVMVF9PVVRQVVRTX09fRU1BSUxfSU5QVVQsXG4gIGVuY2Fwc3VsYXRpb246IFZpZXdFbmNhcHN1bGF0aW9uLk5vbmVcbn0pXG5leHBvcnQgY2xhc3MgT0VtYWlsSW5wdXRDb21wb25lbnQgZXh0ZW5kcyBPVGV4dElucHV0Q29tcG9uZW50IGltcGxlbWVudHMgT25Jbml0IHtcblxuICBjb25zdHJ1Y3RvcihcbiAgICBAT3B0aW9uYWwoKSBASW5qZWN0KGZvcndhcmRSZWYoKCkgPT4gT0Zvcm1Db21wb25lbnQpKSBmb3JtOiBPRm9ybUNvbXBvbmVudCxcbiAgICBlbFJlZjogRWxlbWVudFJlZixcbiAgICBpbmplY3RvcjogSW5qZWN0b3IpIHtcbiAgICBzdXBlcihmb3JtLCBlbFJlZiwgaW5qZWN0b3IpO1xuICB9XG5cbiAgcmVzb2x2ZVZhbGlkYXRvcnMoKTogVmFsaWRhdG9yRm5bXSB7XG4gICAgY29uc3QgdmFsaWRhdG9yczogVmFsaWRhdG9yRm5bXSA9IHN1cGVyLnJlc29sdmVWYWxpZGF0b3JzKCk7XG4gICAgLy8gSW5qZWN0IGVtYWlsIHZhbGlkYXRvclxuICAgIHZhbGlkYXRvcnMucHVzaChPVmFsaWRhdG9ycy5lbWFpbFZhbGlkYXRvcik7XG4gICAgcmV0dXJuIHZhbGlkYXRvcnM7XG4gIH1cblxufVxuIl19

@@ -1,0 +1,34 @@
+import { AfterViewInit, ElementRef, EventEmitter, NgZone, OnDestroy } from '@angular/core';
+import { ControlValueAccessor } from '@angular/forms';
+export declare class CKEditorComponent implements AfterViewInit, OnDestroy, ControlValueAccessor {
+    protected ngZone: NgZone;
+    protected ckIns: any;
+    protected identifier: string;
+    protected innerValue: string;
+    readonly instance: any;
+    protected _readonly: boolean;
+    readonly: boolean;
+    config: any;
+    skin: string;
+    language: string;
+    fullPage: boolean;
+    inline: boolean;
+    id: string;
+    change: EventEmitter<any>;
+    ready: EventEmitter<any>;
+    blur: EventEmitter<any>;
+    focus: EventEmitter<any>;
+    ck: ElementRef;
+    constructor(ngZone: NgZone);
+    protected static getRandomIdentifier(id?: string): string;
+    ngOnDestroy(): void;
+    ngAfterViewInit(): void;
+    initCKEditor(identifier: string): void;
+    destroyCKEditor(): void;
+    protected updateValue(value: string): void;
+    writeValue(value: any): void;
+    protected propagateChange(_: any): void;
+    protected propagateTouch(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+}

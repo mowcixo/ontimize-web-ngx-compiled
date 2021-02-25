@@ -1,0 +1,17 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { OSharedModule } from '../../../shared/shared.module';
+import { ODateRangeInputComponent } from './o-daterange-input.component';
+import { ODaterangepickerDirective } from './o-daterange-input.directive';
+import { DaterangepickerComponent } from './o-daterange-picker.component';
+export class ODateRangeInputModule {
+}
+ODateRangeInputModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [DaterangepickerComponent, ODateRangeInputComponent, ODaterangepickerDirective],
+                imports: [CommonModule, OSharedModule],
+                exports: [ODateRangeInputComponent],
+                entryComponents: [DaterangepickerComponent]
+            },] }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiby1kYXRlcmFuZ2UtaW5wdXQubW9kdWxlLmpzIiwic291cmNlUm9vdCI6Im5nOi8vb250aW1pemUtd2ViLW5neC8iLCJzb3VyY2VzIjpbImxpYi9jb21wb25lbnRzL2lucHV0L2RhdGUtcmFuZ2Uvby1kYXRlcmFuZ2UtaW5wdXQubW9kdWxlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxZQUFZLEVBQUUsTUFBTSxpQkFBaUIsQ0FBQztBQUMvQyxPQUFPLEVBQUUsUUFBUSxFQUFFLE1BQU0sZUFBZSxDQUFDO0FBRXpDLE9BQU8sRUFBRSxhQUFhLEVBQUUsTUFBTSwrQkFBK0IsQ0FBQztBQUM5RCxPQUFPLEVBQUUsd0JBQXdCLEVBQUUsTUFBTSwrQkFBK0IsQ0FBQztBQUN6RSxPQUFPLEVBQUUseUJBQXlCLEVBQUUsTUFBTSwrQkFBK0IsQ0FBQztBQUMxRSxPQUFPLEVBQUUsd0JBQXdCLEVBQUUsTUFBTSxnQ0FBZ0MsQ0FBQztBQVExRSxNQUFNLE9BQU8scUJBQXFCOzs7WUFOakMsUUFBUSxTQUFDO2dCQUNSLFlBQVksRUFBRSxDQUFDLHdCQUF3QixFQUFFLHdCQUF3QixFQUFFLHlCQUF5QixDQUFDO2dCQUM3RixPQUFPLEVBQUUsQ0FBQyxZQUFZLEVBQUUsYUFBYSxDQUFDO2dCQUN0QyxPQUFPLEVBQUUsQ0FBQyx3QkFBd0IsQ0FBQztnQkFDbkMsZUFBZSxFQUFFLENBQUMsd0JBQXdCLENBQUM7YUFDNUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21tb25Nb2R1bGUgfSBmcm9tICdAYW5ndWxhci9jb21tb24nO1xuaW1wb3J0IHsgTmdNb2R1bGUgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcblxuaW1wb3J0IHsgT1NoYXJlZE1vZHVsZSB9IGZyb20gJy4uLy4uLy4uL3NoYXJlZC9zaGFyZWQubW9kdWxlJztcbmltcG9ydCB7IE9EYXRlUmFuZ2VJbnB1dENvbXBvbmVudCB9IGZyb20gJy4vby1kYXRlcmFuZ2UtaW5wdXQuY29tcG9uZW50JztcbmltcG9ydCB7IE9EYXRlcmFuZ2VwaWNrZXJEaXJlY3RpdmUgfSBmcm9tICcuL28tZGF0ZXJhbmdlLWlucHV0LmRpcmVjdGl2ZSc7XG5pbXBvcnQgeyBEYXRlcmFuZ2VwaWNrZXJDb21wb25lbnQgfSBmcm9tICcuL28tZGF0ZXJhbmdlLXBpY2tlci5jb21wb25lbnQnO1xuXG5ATmdNb2R1bGUoe1xuICBkZWNsYXJhdGlvbnM6IFtEYXRlcmFuZ2VwaWNrZXJDb21wb25lbnQsIE9EYXRlUmFuZ2VJbnB1dENvbXBvbmVudCwgT0RhdGVyYW5nZXBpY2tlckRpcmVjdGl2ZV0sXG4gIGltcG9ydHM6IFtDb21tb25Nb2R1bGUsIE9TaGFyZWRNb2R1bGVdLFxuICBleHBvcnRzOiBbT0RhdGVSYW5nZUlucHV0Q29tcG9uZW50XSxcbiAgZW50cnlDb21wb25lbnRzOiBbRGF0ZXJhbmdlcGlja2VyQ29tcG9uZW50XVxufSlcbmV4cG9ydCBjbGFzcyBPRGF0ZVJhbmdlSW5wdXRNb2R1bGUgeyB9XG4iXX0=
